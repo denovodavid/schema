@@ -1,0 +1,9 @@
+/bin/
+
+### macOS ###
+.DS_Store
+
+### Xcode ###
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
