@@ -31,7 +31,7 @@ project "schema"
     staticruntime "On"
     systemversion "latest"
     sysincludedirs {
-      "C:/Program Files/boost/boost_1_68_0/include"
+      "C:/Program Files/boost/boost_1_68_0"
     }
 
   filter "system:macosx"
@@ -78,7 +78,7 @@ project "sandbox"
     staticruntime "On"
     systemversion "latest"
     sysincludedirs {
-      "C:/Program Files/boost/boost_1_68_0/include"
+      "C:/Program Files/boost/boost_1_68_0"
     }
 
   filter "system:macosx"

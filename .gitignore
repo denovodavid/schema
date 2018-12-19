@@ -1,4 +1,5 @@
 /bin/
+/bin-obj/
 
 ### macOS ###
 .DS_Store
@@ -7,3 +8,8 @@
 *.xcodeproj/
 *.xcworkspace/
 xcuserdata/
+
+### VisualStudio ###
+.vs/
+*.sln
+*.vcxproj*
