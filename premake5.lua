@@ -24,12 +24,22 @@ project "schema"
   }
 
   includedirs {
-    -- "%{prj.name}/vendor/spdlog/include"
+    -- "%{prj.name}/vendor/spdlog"
   }
 
   filter "system:windows"
     staticruntime "On"
     systemversion "latest"
+    sysincludedirs {
+      "C:/Program Files/boost/boost_1_68_0/include"
+    }
+
+  filter "system:macosx"
+    sysincludedirs {
+      -- should use $BOOST_ROOT somehow, or configurable variable
+      -- "/usr/local/boost_1_68_0"
+      "/usr/local/Cellar/boost/1.68.0/include"
+    }
 
   filter "configurations:debug"
     defines "SC_DEBUG"
@@ -67,6 +77,14 @@ project "sandbox"
   filter "system:windows"
     staticruntime "On"
     systemversion "latest"
+    sysincludedirs {
+      "C:/Program Files/boost/boost_1_68_0/include"
+    }
+
+  filter "system:macosx"
+    sysincludedirs {
+      "/usr/local/Cellar/boost/1.68.0/include"
+    }
 
   filter "configurations:debug"
     defines "SC_DEBUG"
