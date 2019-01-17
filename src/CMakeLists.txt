@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.8)
 
 project(schema VERSION 1.0
                DESCRIPTION "Schema ECS Library"
