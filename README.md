@@ -15,7 +15,8 @@ It comprises of two sub projects:
 *If you know how CMake works, do whatever you want.*
 
 Check your IDE for CMake support.  
-I'm using [Visual Studio Code](https://code.visualstudio.com/) with [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools).
+I use [Visual Studio Code](https://code.visualstudio.com/) with [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools).  
+And, **Xcode** with `cmake -S . -B ./build -G Xcode`
 
 But, now for some basic unix terminal usage:
 
