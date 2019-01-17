@@ -5,8 +5,13 @@
 #include <unordered_map>
 #include <list>
 #include <vector>
+#include <bitset>
 
-#include <boost/dynamic_bitset.hpp>
+// TODO: remove boost
+//#include <boost/dynamic_bitset.hpp>
+
+// LOOK AT DIS
+// https://baptiste-wicht.com/posts/2015/03/named-optional-template-parameters-compile-time.html
 
 #include "util/TypeCounter.h"
 
@@ -14,12 +19,14 @@ namespace schema {
     using EntityId = size_t;
     using ComponentId = size_t;
     using ComponentTypeId = size_t;
-    using ComponentTypeBitset = boost::dynamic_bitset<>;
+
+    constexpr size_t MAX_COMPONENT_TYPES = 64;
+    using ComponentTypeBitset = std::bitset<MAX_COMPONENT_TYPES>;
 
     template <class K, class V>
     using HashMap = std::unordered_map<K, V>;
 
-    const size_t MAX_COMPONENTS = 64;
+    constexpr size_t MAX_COMPONENTS = 64;
 
     EntityId nextEntityId = 0;
 
@@ -100,13 +107,9 @@ namespace schema {
     // this could be list or vector I guess maybe
     HashMap<ComponentTypeId, IComponentContainer*> componentContainerMap;
 
-    ComponentTypeBitset getComponentTypeBitset() {
-        return ComponentTypeBitset(TypeCounter<IComponent>::Get());
-    }
-
     ComponentTypeBitset getComponentTypeBitset(std::initializer_list<ComponentTypeId> ctIds) {
-        auto bitset = getComponentTypeBitset();
-        for (auto id : ctIds) bitset[id] = 1;
+        ComponentTypeBitset bitset;
+        for (auto id : ctIds) bitset[id] = true;
         return bitset;
     }
 
@@ -137,7 +140,7 @@ namespace schema {
     void registerComponent() {
         static_assert(IsComponent<T>(), "T is not a component!");
         // TODO: check if component already registered.
-        // uses the size of the map to determine incremental index
+        // TODO: check total component count larger that MAX_COMPONENT_TYPES.
         ComponentTypeId ctId = T::COMPONENT_TYPE_ID;
         componentContainerMap[ctId] = new ComponentContainer<T>();
     }
@@ -185,7 +188,7 @@ namespace schema {
     EntityId createEntity() {
         EntityId eId = nextEntityId;
         nextEntityId++;
-        entityComponentTypeMap[eId] = getComponentTypeBitset();
+        entityComponentTypeMap[eId] = ComponentTypeBitset();
         return eId;
     }
 
@@ -193,8 +196,8 @@ namespace schema {
         // has no problems if entity doesn't exist.
         ComponentTypeBitset bitset = entityComponentTypeMap[eId];
         entityComponentTypeMap.erase(eId);
-        for (ComponentTypeBitset::size_type ctId = 0; ctId < bitset.size(); ctId++) {
-            if (bitset[ctId] == 1) {
+        for (size_t ctId = 0; ctId < bitset.size(); ctId++) {
+            if (bitset[ctId]) {
                 ComponentId cId = entityComponentMap[eId][ctId];
                 componentContainerMap[ctId]->freeBlock(cId);
             }
