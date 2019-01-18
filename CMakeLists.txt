@@ -9,4 +9,4 @@ project(SchemaECS)
 add_subdirectory(src)
 add_subdirectory(sandbox)
 
-include(clang-format.cmake)
+include(cmake/clang-format.cmake)
