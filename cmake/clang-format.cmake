@@ -11,6 +11,6 @@ file(GLOB_RECURSE ALL_SOURCE_FILES
 
 add_custom_target(clangformat
                   COMMAND clang-format
-                  -style=google
+                  -style=llvm
                   -i
                   ${ALL_SOURCE_FILES})

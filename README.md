@@ -34,13 +34,13 @@ make -C ./build
 ./build/sandbox/sandbox
 ```
 
-### Code Style is Google Style (mostly)
+### Code Style is [LLVM Style](https://llvm.org/docs/CodingStandards.html) (mostly)
 
 ```sh
-# format file/s to google style
+# format file/s to llvm (default) style
 # run the clangformat CMake target
 # OR
-clang-format -style=google -i [<file> ...]
+clang-format -style=llvm -i [<file> ...]
 ```
 
 ## License
