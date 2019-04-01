@@ -12,3 +12,4 @@ add_subdirectory(src)
 add_subdirectory(sandbox)
 
 include(cmake/clang-format.cmake)
+include(cmake/doxygen.cmake)

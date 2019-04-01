@@ -1,0 +1,4 @@
+PROJECT_NAME           = "Schema"
+OUTPUT_DIRECTORY       = @CMAKE_SOURCE_DIR@/docs/
+INPUT                  = @CMAKE_SOURCE_DIR@/include/schema/
+GENERATE_LATEX         = NO
