@@ -76,25 +76,33 @@ $(function() {
 <div class="title">schema::ECS&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The main class for initialising an <a class="el" href="classschema_1_1_e_c_s.html" title="The main class for initialising an ECS instance.">ECS</a> instance.  
+ <a href="classschema_1_1_e_c_s.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="schema_8h_source.html">schema.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a397bb2fdc3494df22baf14cc651b725c"><td class="memItemLeft" align="right" valign="top"><a id="a397bb2fdc3494df22baf14cc651b725c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ComponentTypeBitset</b> = std::bitset&lt; MAX_COMPONENT_TYPES &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classschema_1_1_e_c_s.html#a397bb2fdc3494df22baf14cc651b725c">ComponentTypeBitset</a> = std::bitset&lt; MAX_COMPONENT_TYPES &gt;</td></tr>
+<tr class="memdesc:a397bb2fdc3494df22baf14cc651b725c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An STL bitset for matching component types to systems. <br /></td></tr>
 <tr class="separator:a397bb2fdc3494df22baf14cc651b725c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb4ce26af7c1659a0c1187fdeb05b360"><td class="memTemplParams" colspan="2"><a id="afb4ce26af7c1659a0c1187fdeb05b360"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:afb4ce26af7c1659a0c1187fdeb05b360"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ComponentContainer</b> = ComponentContainer&lt; T, MAX_COMPONENTS &gt;</td></tr>
+<tr class="memitem:afb4ce26af7c1659a0c1187fdeb05b360"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classschema_1_1_e_c_s.html#afb4ce26af7c1659a0c1187fdeb05b360">ComponentContainer</a> = <a class="el" href="classschema_1_1_e_c_s.html#afb4ce26af7c1659a0c1187fdeb05b360">ComponentContainer</a>&lt; T, MAX_COMPONENTS &gt;</td></tr>
+<tr class="memdesc:afb4ce26af7c1659a0c1187fdeb05b360"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classschema_1_1_component_container.html">ComponentContainer</a> for this <a class="el" href="classschema_1_1_e_c_s.html" title="The main class for initialising an ECS instance.">ECS</a> type. <br /></td></tr>
 <tr class="separator:afb4ce26af7c1659a0c1187fdeb05b360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abbd31005a7c1b8ceb1b9a0af684d3d"><td class="memItemLeft" align="right" valign="top"><a id="a4abbd31005a7c1b8ceb1b9a0af684d3d"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ISystem</b> = ISystem&lt; ComponentTypeBitset, <a class="el" href="classschema_1_1_e_c_s.html">ECS</a>&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt; &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classschema_1_1_e_c_s.html#a4abbd31005a7c1b8ceb1b9a0af684d3d">ISystem</a> = <a class="el" href="classschema_1_1_e_c_s.html#a4abbd31005a7c1b8ceb1b9a0af684d3d">ISystem</a>&lt; <a class="el" href="classschema_1_1_e_c_s.html#a397bb2fdc3494df22baf14cc651b725c">ComponentTypeBitset</a>, <a class="el" href="classschema_1_1_e_c_s.html">ECS</a>&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt; &gt;</td></tr>
+<tr class="memdesc:a4abbd31005a7c1b8ceb1b9a0af684d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structschema_1_1_i_system.html">ISystem</a> for this <a class="el" href="classschema_1_1_e_c_s.html" title="The main class for initialising an ECS instance.">ECS</a> type. <br /></td></tr>
 <tr class="separator:a4abbd31005a7c1b8ceb1b9a0af684d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a02cff3bdfd076e71c5caa2187645ca33"><td class="memTemplParams" colspan="2"><a id="a02cff3bdfd076e71c5caa2187645ca33"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:a02cff3bdfd076e71c5caa2187645ca33"><td class="memTemplItemLeft" align="right" valign="top">ComponentContainer&lt; T &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getComponentContainer</b> () const</td></tr>
+<tr class="memitem:a02cff3bdfd076e71c5caa2187645ca33"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classschema_1_1_e_c_s.html#afb4ce26af7c1659a0c1187fdeb05b360">ComponentContainer</a>&lt; T &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getComponentContainer</b> () const</td></tr>
 <tr class="separator:a02cff3bdfd076e71c5caa2187645ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd82c9a5ec6d1c008e08264bdcbbf96"><td class="memTemplParams" colspan="2"><a id="a2bd82c9a5ec6d1c008e08264bdcbbf96"></a>
 template&lt;class T &gt; </td></tr>
@@ -124,18 +132,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateSystems</b> ()<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a17a8badb75e3d5d4cb7578419802412e"><td class="memTemplParams" colspan="2"><a id="a17a8badb75e3d5d4cb7578419802412e"></a>
-template&lt;class T &gt; </td></tr>
-<tr class="memitem:a17a8badb75e3d5d4cb7578419802412e"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsSystem</b> ()</td></tr>
+<tr class="memitem:a17a8badb75e3d5d4cb7578419802412e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a17a8badb75e3d5d4cb7578419802412e"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classschema_1_1_e_c_s.html#a17a8badb75e3d5d4cb7578419802412e">IsSystem</a> ()</td></tr>
+<tr class="memdesc:a17a8badb75e3d5d4cb7578419802412e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if T is derived from <a class="el" href="structschema_1_1_i_system.html">ISystem</a> at compile time.  <a href="#a17a8badb75e3d5d4cb7578419802412e">More...</a><br /></td></tr>
 <tr class="separator:a17a8badb75e3d5d4cb7578419802412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a650a14b6415a7c00b425fd8fba8c3300"><td class="memItemLeft" align="right" valign="top"><a id="a650a14b6415a7c00b425fd8fba8c3300"></a>
-static ComponentTypeBitset&#160;</td><td class="memItemRight" valign="bottom"><b>getComponentTypeBitset</b> (std::initializer_list&lt; ComponentTypeId &gt; ctIds)</td></tr>
+static <a class="el" href="classschema_1_1_e_c_s.html#a397bb2fdc3494df22baf14cc651b725c">ComponentTypeBitset</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getComponentTypeBitset</b> (std::initializer_list&lt; ComponentTypeId &gt; ctIds)</td></tr>
 <tr class="separator:a650a14b6415a7c00b425fd8fba8c3300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af9792a4424df3fe88eef8b25a15fe43c"><td class="memItemLeft" align="right" valign="top"><a id="af9792a4424df3fe88eef8b25a15fe43c"></a>
-std::unordered_map&lt; EntityId, std::unordered_map&lt; ComponentTypeId, ComponentId &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>EntityComponentMap</b></td></tr>
+<tr class="memitem:af9792a4424df3fe88eef8b25a15fe43c"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; EntityId, std::unordered_map&lt; ComponentTypeId, ComponentId &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classschema_1_1_e_c_s.html#af9792a4424df3fe88eef8b25a15fe43c">EntityComponentMap</a></td></tr>
+<tr class="memdesc:af9792a4424df3fe88eef8b25a15fe43c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps entity IDs to component maps.  <a href="#af9792a4424df3fe88eef8b25a15fe43c">More...</a><br /></td></tr>
 <tr class="separator:af9792a4424df3fe88eef8b25a15fe43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -147,6 +155,80 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>Ma
 static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>MaxComponents</b> = MAX_COMPONENTS</td></tr>
 <tr class="separator:afcf83be7d47a16b1b23dee56176c5259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;const size_t MAX_COMPONENT_TYPES = 0, const size_t MAX_COMPONENTS = 0&gt;<br />
+class schema::ECS&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt;</h3>
+
+<p>The main class for initialising an <a class="el" href="classschema_1_1_e_c_s.html" title="The main class for initialising an ECS instance.">ECS</a> instance. </p>
+<p><a class="el" href="classschema_1_1_e_c_s.html" title="The main class for initialising an ECS instance.">ECS</a> uses MAX_COMPONENT_TYPES and MAX_COMPONENTS to declare various container types and other templated classes, and is the main API for the entity component system.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MAX_COMPONENT_TYPES</td><td>The maximum number of different component types.</td></tr>
+    <tr><td class="paramname">MAX_COMPONENTS</td><td>The maximum number of any one type of component. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a17a8badb75e3d5d4cb7578419802412e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a8badb75e3d5d4cb7578419802412e">&#9670;&nbsp;</a></span>IsSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;const size_t MAX_COMPONENT_TYPES = 0, const size_t MAX_COMPONENTS = 0&gt; </div>
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr bool <a class="el" href="classschema_1_1_e_c_s.html">schema::ECS</a>&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt;::IsSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if T is derived from <a class="el" href="structschema_1_1_i_system.html">ISystem</a> at compile time. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true T is derived from <a class="el" href="structschema_1_1_i_system.html">ISystem</a>.</dd>
+<dd>
+false T is <b>not</b> derived from <a class="el" href="structschema_1_1_i_system.html">ISystem</a>. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af9792a4424df3fe88eef8b25a15fe43c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9792a4424df3fe88eef8b25a15fe43c">&#9670;&nbsp;</a></span>EntityComponentMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;const size_t MAX_COMPONENT_TYPES = 0, const size_t MAX_COMPONENTS = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;EntityId, std::unordered_map&lt;ComponentTypeId, ComponentId&gt; &gt; <a class="el" href="classschema_1_1_e_c_s.html">schema::ECS</a>&lt; MAX_COMPONENT_TYPES, MAX_COMPONENTS &gt;::EntityComponentMap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maps entity IDs to component maps. </p>
+<p>A map of maps, to map entity IDs to maps of component type IDs to component IDs, which are the index of the component data in the respective component container. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/schema/<a class="el" href="schema_8h_source.html">schema.h</a></li>
 </ul>

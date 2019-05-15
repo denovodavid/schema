@@ -1,3 +1,30 @@
+/**
+ * @file
+ * schema.h
+ *
+ * @brief
+ * Main Schema ECS entry point.
+ *
+ * @date
+ * 2019-04-02
+ */
+
+/*! \mainpage Schema
+ *
+ * \section intro_sec Introduction
+ *
+ * Schema is an Entity Component System (ECS) written in C++.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Include Files
+ *
+ *  Schema is header-only, so just
+ * ```cpp
+ * #include "include/schema/schema.h"
+ * ```
+ */
+
 #pragma once
 
 #include <assert.h>
@@ -14,7 +41,21 @@
 #include "i_system.h"
 
 namespace schema {
-
+/**
+ * @brief
+ * The main class for initialising an ECS instance.
+ *
+ * @details
+ * ECS uses MAX_COMPONENT_TYPES and MAX_COMPONENTS to declare various container
+ * types and other templated classes, and is the main API for the entity
+ * component system.
+ *
+ * @tparam
+ * MAX_COMPONENT_TYPES The maximum number of different component types.
+ *
+ * @tparam
+ * MAX_COMPONENTS The maximum number of any one type of component.
+ */
 template <const size_t MAX_COMPONENT_TYPES = 0, const size_t MAX_COMPONENTS = 0>
 class ECS {
   static_assert(MAX_COMPONENT_TYPES != 0,
@@ -22,20 +63,52 @@ class ECS {
   static_assert(MAX_COMPONENTS != 0, "MAX_COMPONENTS cannot be 0 (default).");
 
 public:
+  /**
+   * @brief
+   * An STL bitset for matching component types to systems.
+   */
   using ComponentTypeBitset = std::bitset<MAX_COMPONENT_TYPES>;
+
+  /**
+   * @brief
+   * ComponentContainer for this ECS type.
+   */
   template <class T>
   using ComponentContainer = ComponentContainer<T, MAX_COMPONENTS>;
+
+  /**
+   * @brief
+   * ISystem for this ECS type.
+   */
   using ISystem =
       ISystem<ComponentTypeBitset, ECS<MAX_COMPONENT_TYPES, MAX_COMPONENTS>>;
 
+  /**
+   * @brief
+   * Check if T is derived from ISystem at compile time.
+   *
+   * @tparam
+   * T The type to check.
+   *
+   * @return
+   * true T is derived from ISystem.
+   *
+   * @return
+   * false T is **not** derived from ISystem.
+   */
   template <class T> static constexpr bool IsSystem() {
-    // check if T is ISystem at compile time.
     return std::is_base_of<ISystem, T>::value;
   }
 
-  // a map of maps, to map entity IDs to maps of component type IDs to
-  // component IDs, which are the index of the component data in the
-  // respective component container. phew!
+  /**
+   * @brief
+   * Maps entity IDs to component maps.
+   *
+   * @details
+   * A map of maps, to map entity IDs to maps of component type IDs to component
+   * IDs, which are the index of the component data in the respective component
+   * container.
+   */
   std::unordered_map<EntityId, std::unordered_map<ComponentTypeId, ComponentId>>
       EntityComponentMap;
 
