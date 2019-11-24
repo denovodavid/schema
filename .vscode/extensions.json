@@ -3,7 +3,7 @@
     "jeff-hykin.better-cpp-syntax",
     "ms-vscode.cpptools",
     "twxs.cmake",
-    "vector-of-bool.cmake-tools",
+    "ms-vscode.cmake-tools",
     "xaver.clang-format",
   ]
 }
