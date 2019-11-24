@@ -38,6 +38,7 @@
 #include "component.h"
 #include "component_container.h"
 #include "fwd.h"
+#include "generational_arena.h"
 #include "i_system.h"
 
 namespace schema {

@@ -71,6 +71,55 @@ public:
 };
 
 int main() {
+
+  // ====================================
+  // TESTING GENERATIONAL ARENA
+  // ====================================
+
+  auto arena = schema::GenerationalArena<std::string, 10>();
+
+  // Insert some elements into the arena.
+  auto rza = arena.insert("Robert Fitzgerald Diggs");
+  auto gza = arena.insert("Gary Grice");
+  auto bill = arena.insert("Bill Gates");
+
+  // Inserted elements can be accessed infallibly via indexing (and missing
+  // entries will error).
+  assert(arena[rza] == "Robert Fitzgerald Diggs");
+
+  // # Alternatively, the `get` method provides fallible lookup.
+  if (auto genius = arena.get(gza)) {
+    std::cout << "The gza gza genius: " << genius->get() << "\n";
+  }
+  if (auto val = arena.get(bill)) {
+    val->get() = "Bill Gates doesn't belong in this set...";
+  }
+
+  // We can remove elements.
+  if (auto billr = arena.remove(bill)) {
+    std::cout << *billr << "\n";
+  }
+
+  // Insert a new one.
+  auto murray = arena.insert("Bill Murray");
+
+  // The arena does not contain `bill` anymore, but it does contain `murray`,
+  // even though they are almost certainly at the same index within the arena in
+  // practice. Ambiguities are resolved with an associated generation tag.
+  assert(!arena.contains(bill));
+  assert(arena.contains(murray));
+
+  // Iterate over everything inside the arena.
+  //  for (idx, value) in &arena {
+  //      println!("{:?} is at {:?}", value, idx);
+  //  }
+
+  return 0;
+
+  // ====================================
+  // END TESTING GENERATIONAL ARENA
+  // ====================================
+
   auto ecs = ECS();
 
   ecs.registerComponent<PositionComponent>();
